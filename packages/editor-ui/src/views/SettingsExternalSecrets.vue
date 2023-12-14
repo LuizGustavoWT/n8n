@@ -36,7 +36,6 @@ function goToUpgrade() {
 	<div class="pb-3xl">
 		<n8n-heading size="2xlarge">{{ i18n.baseText('settings.externalSecrets.title') }}</n8n-heading>
 		<div
-			v-if="externalSecretsStore.isEnterpriseExternalSecretsEnabled"
 			data-test-id="external-secrets-content-licensed"
 		>
 			<n8n-callout theme="secondary" class="mt-2xl mb-l">
@@ -51,25 +50,5 @@ function goToUpgrade() {
 				:provider="provider"
 			/>
 		</div>
-		<n8n-action-box
-			v-else
-			class="mt-2xl mb-l"
-			data-test-id="external-secrets-content-unlicensed"
-			:buttonText="i18n.baseText('settings.externalSecrets.actionBox.buttonText')"
-			@click="goToUpgrade"
-		>
-			<template #heading>
-				<span>{{ i18n.baseText('settings.externalSecrets.actionBox.title') }}</span>
-			</template>
-			<template #description>
-				<i18n-t keypath="settings.externalSecrets.actionBox.description">
-					<template #link>
-						<a :href="i18n.baseText('settings.externalSecrets.docs')" target="_blank">
-							{{ i18n.baseText('settings.externalSecrets.actionBox.description.link') }}
-						</a>
-					</template>
-				</i18n-t>
-			</template>
-		</n8n-action-box>
 	</div>
 </template>
