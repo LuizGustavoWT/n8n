@@ -51,7 +51,7 @@ function goToUpgrade() {
 				:provider="provider"
 			/>
 		</div>
-		<n8n-action-box
+<n8n-action-box
 			v-else
 			class="mt-2xl mb-l"
 			data-test-id="external-secrets-content-unlicensed"
